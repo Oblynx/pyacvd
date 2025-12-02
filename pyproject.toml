@@ -42,6 +42,10 @@ test-command = "pytest {project}/tests"
 test-requires = "pytest"
 test-skip = "*-macosx_arm64"
 
+[tool.cibuildwheel.linux]
+# Use manylinux_2_28 for aarch64 to support VTK 9.5 wheels
+manylinux-aarch64-image = "manylinux_2_28"
+
 [tool.cibuildwheel.macos]
 archs = ["native"]
 
